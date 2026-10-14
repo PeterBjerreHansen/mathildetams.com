@@ -54,16 +54,14 @@ a:focus-visible, button:focus-visible { outline: 1px solid var(--muted); outline
 .obj .pic { display: block; transition: transform .5s var(--ease); }
 .obj img { display: block; width: 100%; height: auto; max-width: 100%; transition: filter .5s; }
 .flat img, img.flat { mix-blend-mode: multiply; }
-.obj .cap { display: block; margin-top: 10px; font-size: 12px; color: var(--muted); opacity: 0; transform: translateY(-3px); transition: opacity .3s, transform .3s; }
+.obj .cap { display: block; margin-top: 10px; font-size: 12px; color: var(--muted); }
 .obj .cap i { font-family: var(--display); font-style: italic; font-size: 16px; color: var(--ink); margin-right: 8px; }
 .obj:hover .pic, .obj:focus-visible .pic { transform: translateY(-5px); }
 .obj.cut:hover img, .obj.cut:focus-visible img { filter: drop-shadow(0 14px 16px rgba(49, 58, 46, .15)); }
-.obj:hover .cap, .obj:focus-visible .cap, .obj[aria-expanded="true"] .cap { opacity: 1; transform: none; }
 .obj[aria-expanded="true"] .pic { transform: translateY(-6px); }
 .obj.cut[aria-expanded="true"] img { filter: drop-shadow(0 16px 18px rgba(49, 58, 46, .17)); }
 .field.dim .obj:not([aria-expanded="true"]) { opacity: .22; }
 .empty { max-width: 40ch; color: var(--muted); }
-@media (hover: none) { .obj .cap { opacity: 1; transform: none; } }
 
 /* Style 2: unfold beneath the piece */
 .unfold { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .55s var(--ease); margin-top: -40px; margin-bottom: clamp(56px, 9vw, 130px); }
