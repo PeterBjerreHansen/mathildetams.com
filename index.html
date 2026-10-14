@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mathilde Tams</title>
+<meta name="description" content="Food, art and still life.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Karla:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+  <aside class="side">
+    <p class="name"><a href="#work" id="name"></a></p>
+    <nav>
+      <a href="#work" id="nav-work">Work</a>
+      <a href="#about" id="nav-about">About</a>
+    </nav>
+    <div class="slot" id="slot" aria-live="polite"></div>
+    <div class="foot small">
+      <span id="mail"></span>
+      <span id="city"></span>
+      <span id="draft" class="draft"></span>
+    </div>
+  </aside>
+
+  <div>
+    <main class="field" id="view-work"></main>
+    <main id="view-about" hidden></main>
+  </div>
+</div>
+
+<!-- Shown only with ?styles in the address, to compare the three ways of opening a work. -->
+<div class="switch" role="group" aria-label="Detail style" hidden>
+  <span>Detail style</span>
+  <button type="button" data-mode="column">Column</button>
+  <button type="button" data-mode="unfold">Unfold</button>
+  <button type="button" data-mode="lift">Lift</button>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>

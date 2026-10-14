@@ -1,0 +1,138 @@
+# Pages CMS: the editing page for mathildetams.com (https://app.pagescms.org).
+# Each entry below becomes a form in the editor. Saving a form updates the site within a minute or two.
+
+media:
+  input: media
+  output: media
+  rename: safe
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: works
+    label: Projects
+    type: file
+    path: content/works.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: year
+        label: Year
+        type: string
+      - name: type
+        label: Type of work
+        description: For example "Food styling", "Cyanotype" or "Exhibition".
+        type: string
+      - name: client
+        label: Made for
+        description: A client, a place or "Personal work".
+        type: string
+      - name: description
+        label: Description
+        description: Leave an empty line between paragraphs.
+        type: text
+      - name: image
+        label: Image
+        description: JPG, PNG or WebP. Keep files under about 1 MB (around 2000 pixels on the longest side).
+        type: image
+        required: true
+      - name: cutout
+        label: The image is a cut-out (no background)
+        description: Tick this for a PNG with a transparent background. It then floats on the page with a soft shadow.
+        type: boolean
+        default: false
+      - name: image_credit
+        label: Image credit (optional)
+        type: string
+      - name: hidden
+        label: Hide this project from the site
+        type: boolean
+        default: false
+
+  - name: site
+    label: Front page & About
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: intro
+        label: Short introduction (left column)
+        type: text
+      - name: city
+        label: City
+        type: string
+      - name: detail_style
+        label: How a project opens
+        description: Column shows the text in the left column. Unfold opens it under the picture. Lift brings the picture to the middle of the screen.
+        type: select
+        options:
+          values:
+            - name: column
+              label: Column
+            - name: unfold
+              label: Unfold
+            - name: lift
+              label: Lift
+      - name: draft_note
+        label: Small note under the contact details (optional)
+        description: Empty this once the site is ready.
+        type: string
+      - name: about
+        label: About page
+        type: object
+        fields:
+          - name: portrait
+            label: Portrait
+            type: image
+          - name: portrait_cutout
+            label: The portrait is a cut-out (no background)
+            type: boolean
+          - name: portrait_caption
+            label: Portrait caption (optional)
+            type: string
+          - name: lead
+            label: Opening sentence
+            type: text
+          - name: body
+            label: About text
+            description: Leave an empty line between paragraphs.
+            type: text
+          - name: practice
+            label: Practice
+            description: One item per line, for example "Food styling".
+            type: string
+            list: true
+          - name: selected
+            label: Selected work and education
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{year} {text}"
+            fields:
+              - name: year
+                label: Year
+                type: string
+              - name: text
+                label: Text
+                type: string
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - name: email
+            label: Email
+            type: string
+          - name: instagram
+            label: Instagram
+            type: string
+          - name: studio
+            label: Studio
+            type: string

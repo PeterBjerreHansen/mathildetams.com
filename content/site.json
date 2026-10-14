@@ -1,0 +1,53 @@
+{
+  "name": "Mathilde Tams",
+  "intro": "I make work about what we eat and where it comes from: styled tables, cyanotype prints, menus and small exhibitions. Most of it starts in a kitchen garden or at a market stall, and ends on a plate or a wall.",
+  "city": "Copenhagen",
+  "detail_style": "column",
+  "draft_note": "Draft · placeholder images and text",
+  "about": {
+    "portrait": "media/portrait.webp",
+    "portrait_cutout": true,
+    "portrait_caption": "Placeholder: Vilhelm Hammershøi, Interior with Young Woman Seen from the Back, 1903–04. Randers Kunstmuseum.",
+    "lead": "Mathilde Tams is a Copenhagen-based artist and food stylist working between the studio, the kitchen and the field.",
+    "body": "Trained in fine art and later in a restaurant kitchen, she works where the two meet: still lifes that are eaten afterwards, prints made from the plants that flavour a menu, and dinners staged like small exhibitions.\n\nShe works slowly and seasonally. A project usually begins with a single ingredient, a quince, a handful of seaweed, the last figs of August, and is followed through growing, cooking, photographing and printing.\n\nAlongside commissions for restaurants, bakeries and publishers, she runs an occasional supper club in an old apartment on Christianshavn, where each evening is built around one season and one image.",
+    "practice": [
+      "Food styling",
+      "Art direction",
+      "Still-life photography",
+      "Cyanotype & print",
+      "Menus & supper clubs",
+      "Exhibition"
+    ],
+    "selected": [
+      {
+        "year": "2025",
+        "text": "Sea Vegetables, prints and dinner, Nordhavn"
+      },
+      {
+        "year": "2024",
+        "text": "Windfall, group exhibition on old apple varieties"
+      },
+      {
+        "year": "2024",
+        "text": "Morning Bread, identity shoot for a neighbourhood bakery"
+      },
+      {
+        "year": "2023",
+        "text": "Figs, Late August, cookbook chapter, styling and recipes"
+      },
+      {
+        "year": "2021",
+        "text": "Kitchen apprenticeship, Copenhagen"
+      },
+      {
+        "year": "2019",
+        "text": "BA Fine Art"
+      }
+    ]
+  },
+  "contact": {
+    "email": "hello@mathildetams.com",
+    "instagram": "@ida.holm.studio",
+    "studio": "Strandgade, Christianshavn"
+  }
+}

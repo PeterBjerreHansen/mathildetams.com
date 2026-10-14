@@ -1,0 +1,134 @@
+[
+  {
+    "title": "Quince & Cabbage",
+    "year": "2025",
+    "type": "Food styling",
+    "client": "Restaurant Lyng",
+    "description": "A still-life series for a winter menu built on stored produce. Each dish was first arranged as a picture on a stone sill, then cooked and served the same evening. The quince became a paste, the cabbage was charred whole.",
+    "image": "media/quince.webp",
+    "cutout": true,
+    "image_credit": "Placeholder image: Juan Sánchez Cotán, Quince, Cabbage, Melon and Cucumber, c. 1602. San Diego Museum of Art.",
+    "hidden": false
+  },
+  {
+    "title": "Fern Prints",
+    "year": "2024",
+    "type": "Cyanotype",
+    "client": "Edition of 20",
+    "description": "A small edition of sun prints from young fern fronds gathered in May. Printed on cotton paper and washed in rainwater collected in the garden.",
+    "image": "media/fern.jpg",
+    "cutout": false,
+    "image_credit": "Placeholder image: Anna Atkins, Ferns. Specimen of Cyanotype, 1840s. National Gallery of Art, Washington.",
+    "hidden": false
+  },
+  {
+    "title": "Table for Four",
+    "year": "2024",
+    "type": "Art direction",
+    "client": "A small dairy on Funen",
+    "description": "Catalogue images for a cheesemaker, shot on one oak table over a single day. Every cheese is shown with what it is eaten with on the farm: bread, butter, almonds and a pretzel from the village baker.",
+    "image": "media/cheese.webp",
+    "cutout": true,
+    "image_credit": "Placeholder image: Clara Peeters, Still Life with Cheeses, Almonds and Pretzels, c. 1615. Mauritshuis, The Hague.",
+    "hidden": false
+  },
+  {
+    "title": "Rooms for Eating",
+    "year": "2024",
+    "type": "Set design",
+    "client": "Supper club",
+    "description": "The supper club's rooms, set for winter. Bare floors, one table, white doors left open between rooms so guests could follow the smell of the kitchen.",
+    "image": "media/strandgade.jpg",
+    "cutout": false,
+    "image_credit": "Placeholder image: Vilhelm Hammershøi, Interior, Strandgade 30, 1900.",
+    "hidden": false
+  },
+  {
+    "title": "Verge",
+    "year": "2023",
+    "type": "Drawing",
+    "client": "Field study",
+    "description": "Drawings of a single square metre of roadside, made weekly from April to June. The edible plants among the grasses, dandelion, plantain and yarrow, were later used in a spring menu.",
+    "image": "media/turf.webp",
+    "cutout": true,
+    "image_credit": "Placeholder image: Albrecht Dürer, The Large Piece of Turf, 1503. Albertina, Vienna.",
+    "hidden": false
+  },
+  {
+    "title": "Figs, Late August",
+    "year": "2023",
+    "type": "Recipes & styling",
+    "client": "Cookbook chapter",
+    "description": "Twelve recipes and their pictures for a chapter on the end of summer. Figs roasted with bay, baked into rye, and eaten raw with a hard cheese on the last warm evening.",
+    "image": "media/figs.webp",
+    "cutout": true,
+    "image_credit": "Placeholder image: Luis Meléndez, Still Life with Figs and Bread, c. 1770. National Gallery of Art, Washington.",
+    "hidden": false
+  },
+  {
+    "title": "Morning Bread",
+    "year": "2024",
+    "type": "Food styling",
+    "client": "Neighbourhood bakery",
+    "description": "Identity images for a bakery's first year. The brief was to make bread look like it does at seven in the morning: still warm, a little untidy, next to whatever is in season.",
+    "image": "media/brioche-crop.jpg",
+    "cutout": false,
+    "image_credit": "Placeholder image: Jean-Siméon Chardin, The Brioche, 1763. Musée du Louvre, Paris.",
+    "hidden": false
+  },
+  {
+    "title": "Old Stone",
+    "year": "2023",
+    "type": "Essay",
+    "client": "Walking essay",
+    "description": "A written walk around the old palace quarter in late autumn, about stone, damp and the cellars where food was once kept through the winter.",
+    "image": "media/christiansborg.jpg",
+    "cutout": false,
+    "image_credit": "Placeholder image: Vilhelm Hammershøi, From the Old Christiansborg, Late Autumn. Statens Museum for Kunst, Copenhagen.",
+    "hidden": false
+  },
+  {
+    "title": "Sea Vegetables",
+    "year": "2025",
+    "type": "Cyanotype",
+    "client": "Prints & dinner",
+    "description": "Cyanotype prints made directly from seaweed collected at low tide, shown alongside a dinner cooked from the same harvest: dulse butter, sugar kelp broth and pickled bladderwrack.",
+    "image": "media/algae.jpg",
+    "cutout": false,
+    "image_credit": "Placeholder image: Anna Atkins, Photographs of British Algae: Cyanotype Impressions, 1843–53. Rijksmuseum, Amsterdam.",
+    "hidden": false
+  },
+  {
+    "title": "Windfall",
+    "year": "2024",
+    "type": "Exhibition",
+    "client": "Group exhibition",
+    "description": "An installation of forty old Danish apple varieties, each painted, named and then pressed into juice for the opening. Visitors tasted their way along the wall.",
+    "image": "media/apples.webp",
+    "cutout": true,
+    "image_credit": "Placeholder image: Paul Cézanne, The Basket of Apples, c. 1893. Art Institute of Chicago.",
+    "hidden": false
+  },
+  {
+    "title": "First Strawberries",
+    "year": "2025",
+    "type": "Photography",
+    "client": "Personal work",
+    "description": "A June series photographed in the hour after picking. One bowl, one stone ledge, the same light every morning for two weeks, until the berries were gone.",
+    "image": "media/strawberries.jpg",
+    "cutout": false,
+    "image_credit": "Placeholder image: Adriaen Coorte, Strawberries on a Stone Plinth, c. 1700.",
+    "hidden": false
+  },
+  {
+    "title": "The Castle Garden",
+    "year": "2025",
+    "type": "Research",
+    "client": "Menu research",
+    "description": "Research into what a royal kitchen garden grew in the 1600s, from the records kept at the castle. The results became a spring menu of forgotten herbs and early roots.",
+    "image": "media/tower.webp",
+    "cutout": true,
+    "image_credit": "Placeholder image: Christen Købke, One of the Small Towers on Frederiksborg Castle, 1830s.",
+    "hidden": false
+  }
+]
