@@ -2,9 +2,9 @@
 
 Mathilde Tams's portfolio site, with a simple editing page so she can add projects and change texts and images herself.
 
-**Live site:** [peterbjerrehansen.github.io/mathildetams.com](https://peterbjerrehansen.github.io/mathildetams.com/) (moves to mathildetams.com once the domain is connected)
-**Repository:** [github.com/PeterBjerreHansen/mathildetams.com](https://github.com/PeterBjerreHansen/mathildetams.com)
-**Editing page:** [app.pagescms.org](https://app.pagescms.org)
+- **Live site:** [peterbjerrehansen.github.io/mathildetams.com](https://peterbjerrehansen.github.io/mathildetams.com/) (moves to mathildetams.com once the domain is connected)
+- **Repository:** [github.com/PeterBjerreHansen/mathildetams.com](https://github.com/PeterBjerreHansen/mathildetams.com)
+- **Editing page:** [app.pagescms.org](https://app.pagescms.org)
 
 **Cost:** hosting on GitHub Pages and the Pages CMS editor are free. The only cost is the domain, about $10–11 a year for a .com at Cloudflare Registrar.
 
