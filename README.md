@@ -67,6 +67,7 @@ Mathilde never needs GitHub. She is invited to Pages CMS by email and only ever 
 ### 3. Working on the code yourself
 - Mathilde's saves go into the repository on GitHub, not into the copy on your Mac. Before changing the design, run `git pull` in `~/Desktop/projects/coding_projects/on_github/mathildetams.com` so you start from her latest content.
 - Stage files by name (`git add style.css`), then commit and push. GitHub Pages republishes automatically.
+- After changing `style.css` or `site.js`, raise the number in `?v=` for that file in `index.html` (for example `?v=4` to `?v=5`). GitHub tells browsers to keep these files for 10 minutes, and the new number makes them fetch the new version straight away. Content edits from Pages CMS do not need this.
 
 ### 4. When something looks wrong
 - Every save in the editor is a commit in the repository, so any change can be undone from GitHub's history.
