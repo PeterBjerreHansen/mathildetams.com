@@ -8,7 +8,9 @@ Mathilde Tams's portfolio. It is a plain static site: `index.html`, `style.css` 
 | Name, intro, About page, contact, how a project opens | `content/site.json` |
 | Images | `media/` |
 | Editing-page setup | `.pages.yml` |
-| Domain for GitHub Pages | `CNAME` |
+| Domain for GitHub Pages | `CNAME`, created by GitHub when the domain is entered in step 3 |
+
+**Repository:** [github.com/PeterBjerreHansen/mathildetams.com](https://github.com/PeterBjerreHansen/mathildetams.com). **Live site until the domain is connected:** [peterbjerrehansen.github.io/mathildetams.com](https://peterbjerrehansen.github.io/mathildetams.com/). Steps 1 and 2 below are done.
 
 **Cost:** hosting on GitHub Pages and the Pages CMS editor are free. The only cost is the domain, about $10–11 a year for a .com at Cloudflare Registrar.
 
@@ -26,7 +28,7 @@ git init -b main
 ```
 
 ```bash
-git add index.html style.css site.js content media .pages.yml CNAME .nojekyll README.md
+git add index.html style.css site.js content media .pages.yml .nojekyll README.md
 ```
 
 ```bash
@@ -58,7 +60,8 @@ git push -u origin main
 | A | @ | 185.199.111.153 |
 | CNAME | www | YOUR-USERNAME.github.io |
 
-3. Back in GitHub, **Settings → Pages → Custom domain**: enter `mathildetams.com` and save. When the DNS check passes (minutes to a few hours), tick **Enforce HTTPS**.
+3. Back in GitHub, **Settings → Pages → Custom domain**: enter `mathildetams.com` and save. GitHub adds a `CNAME` file to the repository for you. When the DNS check passes (minutes to a few hours), tick **Enforce HTTPS**.
+4. On this Mac, run `git pull` in this folder afterwards, so the local copy has the new `CNAME` file and any edits made in Pages CMS.
 
 ### 4. Set up the editing page and invite Mathilde
 1. Go to [app.pagescms.org](https://app.pagescms.org) and sign in with your GitHub account.
