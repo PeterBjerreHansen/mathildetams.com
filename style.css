@@ -47,12 +47,14 @@ a:focus-visible, button:focus-visible { outline: 1px solid var(--muted); outline
 .desc .steps { display: flex; gap: 20px; }
 
 /* Field of work */
-.field { padding-block: 34px 120px; min-width: 0; }
+.field { padding-block: 34px 120px; min-width: 0; max-width: 1500px; }
+.field[data-layout="narrow"] .row, .field[data-layout="narrow"] .row:first-child { margin-bottom: 52px; }
+.field[data-layout="narrow"] .obj img { max-height: 70vh; }
 .row { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 20px; align-items: start; margin-bottom: clamp(56px, 9vw, 130px); }
 .row:first-child { margin-bottom: clamp(40px, 6vw, 90px); }
 .obj { background: none; border: 0; padding: 0; margin: 0; color: inherit; font: inherit; text-align: left; cursor: pointer; display: block; min-width: 0; transition: opacity .5s var(--ease); }
 .obj .pic { display: block; transition: transform .5s var(--ease); }
-.obj img { display: block; width: 100%; height: auto; max-width: 100%; transition: filter .5s; }
+.obj img { display: block; width: auto; height: auto; max-width: 100%; max-height: 78vh; transition: filter .5s; }
 .flat img, img.flat { mix-blend-mode: multiply; }
 .obj .cap { display: block; margin-top: 10px; font-size: 12px; color: var(--muted); }
 .obj .cap i { font-family: var(--display); font-style: italic; font-size: 16px; color: var(--ink); margin-right: 8px; }

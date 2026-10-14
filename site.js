@@ -21,33 +21,66 @@
   $("draft").textContent = S.draft_note || "";
   const introHTML = paras(S.intro);
 
-  // The layout repeats this pattern of rows, so new works always find a place.
+  // The layout repeats a pattern of rows, so new works always find a place.
   // Each slot is [first column of 12, columns wide, drop from the row's top in px].
-  const PATTERN = [
-    [[2, 4, 0], [8, 3, 120]],
-    [[4, 6, 0]],
-    [[1, 3, 60], [7, 4, 0]],
-    [[3, 6, 0]],
-    [[1, 4, 140], [6, 6, 0]],
-    [[2, 3, 0], [7, 5, 70]],
-    [[4, 4, 0], [10, 2, 40]]
+  // The pattern depends on the window's width: one piece per row on phones,
+  // one or two on tablets and small laptops, two or three on larger screens.
+  const LAYOUTS = [
+    { name: "narrow", maxWidth: 819, pattern: [
+      [[1, 10, 0]],
+      [[3, 10, 0]],
+      [[2, 9, 0]],
+      [[4, 9, 0]],
+      [[1, 9, 0]],
+      [[3, 8, 0]]
+    ] },
+    { name: "medium", maxWidth: 1199, pattern: [
+      [[2, 4, 0], [8, 3, 120]],
+      [[4, 6, 0]],
+      [[1, 3, 60], [7, 4, 0]],
+      [[3, 6, 0]],
+      [[1, 4, 140], [6, 6, 0]],
+      [[2, 3, 0], [7, 5, 70]],
+      [[4, 4, 0], [10, 2, 40]]
+    ] },
+    { name: "wide", maxWidth: Infinity, pattern: [
+      [[1, 3, 0], [5, 4, 90], [10, 3, 30]],
+      [[2, 4, 40], [8, 4, 0]],
+      [[1, 4, 0], [6, 3, 120], [10, 3, 20]],
+      [[3, 4, 0], [8, 5, 60]],
+      [[1, 3, 80], [5, 4, 0], [10, 3, 140]],
+      [[2, 5, 0], [8, 4, 50]]
+    ] }
   ];
-  const rows = [];
-  for (let i = 0, p = 0; i < W.length; p++) {
-    const slots = PATTERN[p % PATTERN.length];
-    rows.push(slots.slice(0, W.length - i).map((slot) => ({ i: i++, slot })));
-  }
-  const rowOf = [];
-  rows.forEach((row, r) => row.forEach(({ i, slot }) => { rowOf[i] = { r, col: slot[0] }; }));
+  const layoutFor = (width) => LAYOUTS.find((l) => width <= l.maxWidth);
+  let layout = null, rowOf = [];
 
-  $("view-work").innerHTML = W.length ? rows.map((row, r) => `<div class="row" id="row-${r}">${row.map(({ i, slot: [col, span, drop] }) => {
-    const w = W[i];
-    return `<button class="obj ${w.cutout ? "cut" : "flat"}" type="button" id="obj-${i}" data-i="${i}" aria-expanded="false"
-        style="grid-column:${col} / span ${span};margin-top:${drop}px" aria-label="${esc(w.title)}${w.year ? ", " + esc(w.year) : ""}">
-        <span class="pic"><img src="${esc(src(w.image))}" alt="" loading="${i < 4 ? "eager" : "lazy"}"></span>
-        <span class="cap"><i>${esc(w.title)}</i>${esc(w.year)}</span>
-      </button>`;
-  }).join("")}</div>`).join("") : `<p class="empty">No works yet.</p>`;
+  function render() {
+    layout = layoutFor(window.innerWidth);
+    const rows = [];
+    for (let i = 0, p = 0; i < W.length; p++) {
+      const slots = layout.pattern[p % layout.pattern.length];
+      rows.push(slots.slice(0, W.length - i).map((slot) => ({ i: i++, slot })));
+    }
+    rowOf = [];
+    rows.forEach((row, r) => row.forEach(({ i, slot }) => { rowOf[i] = { r, col: slot[0] }; }));
+    $("view-work").dataset.layout = layout.name;
+    $("view-work").innerHTML = W.length ? rows.map((row, r) => `<div class="row" id="row-${r}">${row.map(({ i, slot: [col, span, drop] }) => {
+      const w = W[i];
+      return `<button class="obj ${w.cutout ? "cut" : "flat"}" type="button" id="obj-${i}" data-i="${i}" aria-expanded="false"
+          style="grid-column:${col} / span ${span};margin-top:${drop}px" aria-label="${esc(w.title)}${w.year ? ", " + esc(w.year) : ""}">
+          <span class="pic"><img src="${esc(src(w.image))}" alt="" loading="${i < 4 ? "eager" : "lazy"}"></span>
+          <span class="cap"><i>${esc(w.title)}</i>${esc(w.year)}</span>
+        </button>`;
+    }).join("")}</div>`).join("") : `<p class="empty">No works yet.</p>`;
+  }
+  render();
+  // Rebuild only when the window crosses into another layout, not on every pixel of a resize.
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => { if (layoutFor(window.innerWidth) !== layout) { close(); render(); } }, 150);
+  });
 
   function descHTML(i, headingId) {
     const w = W[i];
@@ -84,7 +117,8 @@
       const { r, col } = rowOf[i];
       const el = document.createElement("div");
       el.className = "unfold";
-      el.innerHTML = `<div><div class="row" style="margin:0"><div style="grid-column:${Math.min(col, 7)} / span 6;min-width:0">${descHTML(i, "d-title")}</div></div></div>`;
+      const cols = layout.name === "narrow" ? "1 / -1" : `${Math.min(col, 7)} / span 6`;
+      el.innerHTML = `<div><div class="row" style="margin:0"><div style="grid-column:${cols};min-width:0">${descHTML(i, "d-title")}</div></div></div>`;
       $("row-" + r).after(el);
       if (reduced) el.classList.add("open");
       else requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add("open")));
