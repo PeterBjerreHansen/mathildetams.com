@@ -1,54 +1,56 @@
 # mathildetams.com
 
-Mathilde Tams's portfolio. It is a plain static site: `index.html`, `style.css` and `site.js` build the pages from two content files, which she edits through **Pages CMS**, a free editing page.
+Mathilde Tams's portfolio site, with a simple editing page so she can add projects and change texts and images herself.
+
+**Live site:** [peterbjerrehansen.github.io/mathildetams.com](https://peterbjerrehansen.github.io/mathildetams.com/) (moves to mathildetams.com once the domain is connected)
+**Repository:** [github.com/PeterBjerreHansen/mathildetams.com](https://github.com/PeterBjerreHansen/mathildetams.com)
+**Editing page:** [app.pagescms.org](https://app.pagescms.org)
+
+**Cost:** hosting on GitHub Pages and the Pages CMS editor are free. The only cost is the domain, about $10–11 a year for a .com at Cloudflare Registrar.
+
+---
+
+## How it fits together
+
+```
+Mathilde → Pages CMS (forms) → this GitHub repository → GitHub Pages → the website
+```
+
+1. **This repository is the storage.** It holds the design (`index.html`, `style.css`, `site.js`), the texts (two content files) and the images. Peter owns it.
+2. **GitHub Pages is the website.** It publishes whatever is in the repository. When a file changes, the site updates within a minute or two.
+3. **Pages CMS is the editing page.** It shows the content files as simple forms. When Mathilde clicks Save, Pages CMS writes the change into the repository, and GitHub Pages updates the site.
+
+Mathilde never needs GitHub. She is invited to Pages CMS by email and only ever sees the forms. The editor works on the repository, not on the web address, so it can be used before the domain is connected.
 
 | What | Where |
 |---|---|
 | Projects (title, year, text, image, cut-out or not, hidden or not) | `content/works.json` |
 | Name, intro, About page, contact, how a project opens | `content/site.json` |
 | Images | `media/` |
-| Editing-page setup | `.pages.yml` |
-| Domain for GitHub Pages | `CNAME`, created by GitHub when the domain is entered in step 3 |
-
-**Repository:** [github.com/PeterBjerreHansen/mathildetams.com](https://github.com/PeterBjerreHansen/mathildetams.com). **Live site until the domain is connected:** [peterbjerrehansen.github.io/mathildetams.com](https://peterbjerrehansen.github.io/mathildetams.com/). Steps 1 and 2 below are done.
-
-**Cost:** hosting on GitHub Pages and the Pages CMS editor are free. The only cost is the domain, about $10–11 a year for a .com at Cloudflare Registrar.
+| Editing-page setup (which forms and fields Pages CMS shows) | `.pages.yml` |
+| Domain for GitHub Pages | `CNAME`, created by GitHub when the domain is entered (step 2 below) |
 
 ---
 
-## Part 1: one-time setup (for you, about an hour)
+## Status
 
-### 1. Put the site on GitHub
-1. Create a free account at [github.com](https://github.com).
-2. Create a new **public** repository, for example `mathildetams.com`. Leave it empty (no README).
-3. In this folder, run these commands, replacing `YOUR-USERNAME` with your GitHub username:
+- [x] Site built and pushed to this repository
+- [x] GitHub Pages switched on (branch `main`, folder `/`), site live at the github.io address
+- [ ] Editing page set up and Mathilde invited (step 1 below; can be done now)
+- [ ] Domain bought and connected (step 2 below; whenever she has bought it)
+- [ ] Placeholder content replaced (see "Before the site goes public" at the end)
 
-```bash
-git init -b main
-```
+---
 
-```bash
-git add index.html style.css site.js content media .pages.yml .nojekyll README.md
-```
+## Part 1: what's left to set up (for Peter)
 
-```bash
-git commit -m "Portfolio site with Pages CMS editing"
-```
+### 1. Set up the editing page and invite Mathilde (about 10 minutes, can be done now)
+1. Go to [app.pagescms.org](https://app.pagescms.org) and sign in with the GitHub account `PeterBjerreHansen`.
+2. When asked, install the Pages CMS GitHub App and give it access to the `mathildetams.com` repository only.
+3. Open the repository in Pages CMS. It reads `.pages.yml` and shows **Projects** and **Front page & About**.
+4. Open the repository's **Collaborators** settings in Pages CMS and invite Mathilde by email. She does not need a GitHub account.
 
-```bash
-git remote add origin https://github.com/YOUR-USERNAME/mathildetams.com.git
-```
-
-```bash
-git push -u origin main
-```
-
-### 2. Turn on GitHub Pages
-1. In the repository, open **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**, then branch **main** and folder **/ (root)**. Save.
-3. After a minute the site is live at `https://YOUR-USERNAME.github.io/mathildetams.com/`. Check that it looks right there before you connect the domain.
-
-### 3. Buy and connect mathildetams.com
+### 2. Buy and connect mathildetams.com (when she is ready)
 1. Mathilde buys the domain herself, in her own name, so she owns it. [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/) sells at cost (about $10–11 a year).
 2. In Cloudflare, open the domain's **DNS** settings and add these records. Set each one to **DNS only** (grey cloud), not proxied:
 
@@ -58,21 +60,18 @@ git push -u origin main
 | A | @ | 185.199.109.153 |
 | A | @ | 185.199.110.153 |
 | A | @ | 185.199.111.153 |
-| CNAME | www | YOUR-USERNAME.github.io |
+| CNAME | www | peterbjerrehansen.github.io |
 
-3. Back in GitHub, **Settings → Pages → Custom domain**: enter `mathildetams.com` and save. GitHub adds a `CNAME` file to the repository for you. When the DNS check passes (minutes to a few hours), tick **Enforce HTTPS**.
-4. On this Mac, run `git pull` in this folder afterwards, so the local copy has the new `CNAME` file and any edits made in Pages CMS.
+3. In GitHub, open [Settings → Pages](https://github.com/PeterBjerreHansen/mathildetams.com/settings/pages), enter `mathildetams.com` as the **Custom domain** and save. GitHub adds a `CNAME` file to the repository for you. When the DNS check passes (minutes to a few hours), tick **Enforce HTTPS**.
 
-### 4. Set up the editing page and invite Mathilde
-1. Go to [app.pagescms.org](https://app.pagescms.org) and sign in with your GitHub account.
-2. When asked, install the Pages CMS GitHub App and give it access to the `mathildetams.com` repository only.
-3. Open the repository in Pages CMS. It reads `.pages.yml` and shows **Projects** and **Front page & About**.
-4. Open the repository's **Collaborators** settings in Pages CMS and invite Mathilde by email. She does not need a GitHub account.
+### 3. Working on the code yourself
+- Mathilde's saves go into the repository on GitHub, not into the copy on your Mac. Before changing the design, run `git pull` in the `portfolio-site` folder so you start from her latest content.
+- Stage files by name (`git add style.css`), then commit and push. GitHub Pages republishes automatically.
 
-### 5. When something looks wrong
+### 4. When something looks wrong
 - Every save in the editor is a commit in the repository, so any change can be undone from GitHub's history.
 - If the site does not update, check the **Actions** tab in GitHub: each save starts a short "pages build and deployment" run.
-- To try the three ways a project can open, add `?styles` to the address, for example `https://mathildetams.com/?styles`. A small switch appears in the corner. Only that visitor sees it.
+- To try the three ways a project can open, add `?styles` to the address, for example [peterbjerrehansen.github.io/mathildetams.com/?styles](https://peterbjerrehansen.github.io/mathildetams.com/?styles). A small switch appears in the corner. Only that visitor sees it.
 
 ---
 
