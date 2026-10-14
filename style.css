@@ -2,11 +2,11 @@
    Cut-out pictures sit directly on the paper; rectangular pictures keep their clean edges.
    One light look: pale green paper and soft ink. */
 :root {
-  --paper: #f3f6ef;
-  --veil: rgba(243, 246, 239, .97);
+  --paper: #e7efdd;
+  --veil: rgba(231, 239, 221, .97);
   --ink: #313a2e;
   --muted: #838c7c;
-  --rule: #dae0d2;
+  --rule: #cdd8c1;
   --display: "Cormorant Garamond", Garamond, "Times New Roman", serif;
   --body: "Karla", "Helvetica Neue", Arial, sans-serif;
   --ease: cubic-bezier(.2, .7, .2, 1);
